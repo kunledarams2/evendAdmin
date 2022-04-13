@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".Views.Fragment.DashBoard.OrderList"
+        android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:title="Order List"
+            app:titleTextColor="#01040C"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            app:titleMarginStart="50dp"
+            app:titleTextAppearance="@style/toolBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#01040C"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/holder_container_orders"
+            android:layout_marginTop="20dp"
+            />
+</LinearLayout>

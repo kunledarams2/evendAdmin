@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".Views.Fragment.subDashboard.EditItem">
+    <LinearLayout
+            android:id="@+id/item_list_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+           >
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:title="Edit Item"
+                app:navigationIcon="@drawable/ic_navigate_before_black_24dp"
+                app:titleTextAppearance="@style/toolBarStyle"
+                app:titleTextColor="@color/colorWhite"/>
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:listitem="@layout/holder_item_edit"/>
+
+    </LinearLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+       >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/header_light_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+                android:id="@+id/nav_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+
+                android:background="@drawable/ic_close_black_24dp"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/avenir_book"
+                android:text="Edit Item"
+                android:textColor="#4139AB"
+                android:textFontWeight="600"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/nav_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/colorWhite"
+                android:progress="28"
+                android:progressTint="#74E179"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+            android:id="@+id/scroll_form_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/upload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+                android:id="@+id/form_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/header_wrapper">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/avenir_book"
+                    android:padding="15dp"
+                    android:text="Instruction: Item image must be more than one"
+                    android:textFontWeight="600" />
+
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="0dp"
+                    android:fontFamily="@font/avenir_medium"
+                    android:text=""
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/avenir_book"
+                    android:text="Item Name" />
+
+            <EditText
+                    android:id="@+id/product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/stroke_rectangle"
+                    android:fontFamily="@font/avenir_book"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/avenir_book"
+                    android:text="Price" />
+
+            <EditText
+                    android:id="@+id/product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/stroke_rectangle"
+                    android:fontFamily="@font/avenir_book"
+                    android:hint="E.g 2500"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:text="" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/avenir_book"
+                    android:text="Color" />
+
+            <MultiAutoCompleteTextView
+                    android:id="@+id/available_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/stroke_rectangle"
+                    android:fontFamily="@font/avenir_book"
+                    android:hint="E.g. Blue, Black, Red"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/avenir_book"
+                    android:text="Size" />
+
+            <MultiAutoCompleteTextView
+                    android:id="@+id/product_available_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/stroke_rectangle"
+                    android:fontFamily="@font/avenir_book"
+                    android:hint="E.g. M, XL, XL, 45, 60"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:text="" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/avenir_book"
+                    android:text="Available Item in store" />
+
+            <EditText
+                    android:id="@+id/total_items_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/stroke_rectangle"
+                    android:fontFamily="@font/avenir_book"
+                    android:hint=""
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/avenir_book"
+                    android:text="Description" />
+
+            <EditText
+                    android:id="@+id/product_desp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/stroke_rectangle"
+                    android:fontFamily="@font/avenir_book"
+                    android:gravity="left|top"
+                    android:hint="Description"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+            <Button
+                    android:id="@+id/add_items_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/stroke_rectangle"
+                    android:fontFamily="@font/avenir_book"
+                    android:text="Add Item Images"
+                    android:textAllCaps="false" />
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <Button
+            android:id="@+id/upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/deep_blue_rectangle"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+            android:layout_width="5dp"
+            android:layout_height="0dp"
+            android:background="#74E179"
+            app:layout_constraintBottom_toBottomOf="@+id/scroll_form_container"
+            app:layout_constraintEnd_toStartOf="@+id/scroll_form_container"
+            app:layout_constraintTop_toTopOf="@+id/scroll_form_container" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</LinearLayout>
