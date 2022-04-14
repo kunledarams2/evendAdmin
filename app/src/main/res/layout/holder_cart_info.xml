@@ -178,6 +178,7 @@
 
 
         <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp">
@@ -191,7 +192,7 @@
                     android:text="Payment Option" />
 
             <TextView
-                    android:id="@+id/paymentOption"
+                    android:id="@+id/paymentOption1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -210,7 +211,8 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:visibility="gone">
 
             <TextView
                     android:layout_width="match_parent"
@@ -221,7 +223,7 @@
                     android:text="Phone" />
 
             <TextView
-                    android:id="@+id/buyerPhone"
+                    android:id="@+id/buyerPhone1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -240,7 +242,8 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:visibility="gone">
 
             <TextView
                     android:layout_width="match_parent"
@@ -251,7 +254,7 @@
                     android:text="Address" />
 
             <TextView
-                    android:id="@+id/buyerAddress"
+                    android:id="@+id/buyerAddress1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

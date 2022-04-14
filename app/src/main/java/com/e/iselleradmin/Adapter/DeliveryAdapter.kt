@@ -61,9 +61,10 @@ class DeliveryAdapter(context: Context) : RecyclerView.Adapter<DeliveryAdapter.V
                     }
 
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        itemView.buyerName.text = dataSnapshot.child("username").value.toString()
-//                        itemView.buyerPhone.text = dataSnapshot.child("phone").value.toString()
-//                        itemView.buyerAddress.text = dataSnapshot.child("address").value.toString()
+                        itemView.buyerName.text = "Buyer: ${dataSnapshot.child("username").value.toString()}"
+                        itemView.buyerPhone.text = "Phone Nos: ${dataSnapshot.child("phone").value.toString()}"
+                        itemView.buyerAddress.text ="Address: ${dataSnapshot.child("address").value.toString()}"
+                        itemView.paymentOption.text ="PaymentOption: ${deliveryInfo.paymentOption}"
                     }
                 })
 
@@ -117,6 +118,7 @@ class DeliveryAdapter(context: Context) : RecyclerView.Adapter<DeliveryAdapter.V
             viewCart.color.text = cartInfo.colorSelected
             viewCart.quantity_ordered.text = cartInfo.noSelected
             viewCart.price.text = cartInfo.productPrices
+
 
             linearLayout!!.addView(viewCart)
 

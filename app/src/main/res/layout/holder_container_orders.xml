@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
 
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
@@ -19,46 +19,76 @@
         <TextView
                 android:id="@+id/buyerName"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/avenir_book"
                 android:gravity="center"
                 android:padding="5dp"
+                android:text="Kunle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/buyerPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/avenir_book"
-                android:text=""
-                app:layout_constraintStart_toStartOf="parent" />
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="08107536436"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buyerName" />
+
+        <TextView
+                android:id="@+id/buyerAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir_book"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Lagos"
+                app:layout_constraintStart_toStartOf="@+id/buyerPhone"
+                app:layout_constraintTop_toBottomOf="@+id/buyerPhone" />
+
+        <TextView
+                android:id="@+id/paymentOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/avenir_book"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Lagos"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/buyerPhone"
+                app:layout_constraintTop_toBottomOf="@+id/buyerAddress" />
 
         <TextView
                 android:id="@+id/morderDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="30dp"
-
-                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/avenir_book"
                 android:padding="5dp"
                 android:text=""
                 android:textFontWeight="500"
-                android:fontFamily="@font/avenir_book"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/openBtn"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6" />
-
+                app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
                 android:id="@+id/openBtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="0dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:background="@null"
                 android:src="@drawable/ic_more_vert_black_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
 
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
                 android:id="@+id/closeBtn"

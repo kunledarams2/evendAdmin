@@ -11,6 +11,7 @@ import com.e.iselleradmin.Database.FDatabase
 import com.e.iselleradmin.Model.AdminReg
 import com.e.iselleradmin.R
 import com.e.iselleradmin.Views.Activity.HomeActivity
+import com.e.iselleradmin.Views.Activity.LoginActivity
 import com.e.iselleradmin.Views.Activity.SignUpActivity
 import com.e.iselleradmin.Views.Fragment.FragmentTitle
 import com.google.firebase.auth.FirebaseAuth
@@ -54,6 +55,10 @@ class RegistrationPage : FragmentTitle() {
         db = FDatabase(context!!)
 
         view.submitBut.setOnClickListener { createAccount() }
+        view.route_login.setOnClickListener {
+            val intent = Intent(context, LoginActivity::class.java)
+            startActivity(intent)
+            (activity)!!.finish() }
     }
 
     private fun createAccount() {
