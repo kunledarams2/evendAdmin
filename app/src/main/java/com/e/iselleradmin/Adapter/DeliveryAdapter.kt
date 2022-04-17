@@ -65,6 +65,7 @@ class DeliveryAdapter(context: Context) : RecyclerView.Adapter<DeliveryAdapter.V
                         itemView.buyerPhone.text = "Phone Nos: ${dataSnapshot.child("phone").value.toString()}"
                         itemView.buyerAddress.text ="Address: ${dataSnapshot.child("address").value.toString()}"
                         itemView.paymentOption.text ="PaymentOption: ${deliveryInfo.paymentOption}"
+                        itemView.totalItem.text = "Item: ${deliveryInfo.cartInfo.size}"
                     }
                 })
 
@@ -84,17 +85,19 @@ class DeliveryAdapter(context: Context) : RecyclerView.Adapter<DeliveryAdapter.V
             logMessage(cartInfoList.size.toString())
 
 
-            for (itemCart in deliveryInfo.cartInfo){
-                itemInfoBlind(itemCart,context)
 
-            }
             itemView.openBtn.setOnClickListener {
-
-
-//               itemView.itemInfoWrapper.visibility = View.VISIBLE
+                linearLayout!!.removeAllViews()
                 linearLayout!!.visibility = View.VISIBLE
                 itemView.closeBtn.visibility = View.VISIBLE
                 itemView.openBtn.visibility = View.GONE
+
+                for (itemCart in deliveryInfo.cartInfo){
+                    itemInfoBlind(itemCart,context)
+
+                }
+
+
 
             }
             itemView.closeBtn.setOnClickListener {
@@ -102,15 +105,13 @@ class DeliveryAdapter(context: Context) : RecyclerView.Adapter<DeliveryAdapter.V
                 linearLayout!!.visibility = View.GONE
                 itemView.closeBtn.visibility = View.GONE
                 itemView.openBtn.visibility = View.VISIBLE
+                linearLayout!!.removeAllViews()
+
             }
         }
 
         private fun itemInfoBlind(cartInfo: cartInfo, context: Context) {
             val viewCart = LayoutInflater.from(context).inflate(R.layout.holder_cart_info, null)
-
-//            for (cartInfo in cartInfom){
-//
-//            }
 
             Picasso.with(context).load(cartInfo.productId).into(viewCart.itemImage)
             viewCart.size.text = cartInfo.sizeSelected

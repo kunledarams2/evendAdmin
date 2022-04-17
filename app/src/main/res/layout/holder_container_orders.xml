@@ -56,14 +56,25 @@
                 android:id="@+id/paymentOption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/avenir_book"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Lagos"
+                app:layout_constraintStart_toStartOf="@+id/buyerPhone"
+                app:layout_constraintTop_toBottomOf="@+id/buyerAddress" />
+
+        <TextView
+                android:id="@+id/totalItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/avenir_book"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Lagos"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/buyerPhone"
-                app:layout_constraintTop_toBottomOf="@+id/buyerAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/paymentOption" />
 
         <TextView
                 android:id="@+id/morderDate"
@@ -77,6 +88,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/openBtn"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageButton
                 android:id="@+id/openBtn"
@@ -95,14 +107,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:background="@null"
                 android:src="@drawable/ic_more_vert_black_24dp"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -113,7 +123,7 @@
                 android:id="@+id/orderListView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:visibility="gone">
 
         </LinearLayout>
